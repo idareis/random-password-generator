@@ -92,12 +92,12 @@ var upperCasedCharacters = [
 function getPasswordOptions() {
 
 // Prompt for password length
-var passwordLength = parseInt(prompt("Enter a password length between 8 and 128 characters:"));
+var length = parseInt(prompt("Enter a password length between 8 and 128 characters:"));
 
 // Validating the password length  
-  if (passwordLength < 8 || passwordLength > 128 || isNaN(length)) {
+  if (length < 8 || length > 128 || isNaN(length)) {
     alert("Please enter a valid password length between 8 and 128 characters.");
-    return getPasswordOptions();
+    return null;
   }
 
   var specialChar = confirm("Would you like to include special characters?");
