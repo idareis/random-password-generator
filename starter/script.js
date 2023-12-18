@@ -92,7 +92,8 @@ var upperCasedCharacters = [
 function getPasswordOptions() {
 
 // Prompt for password length
-var passwordLength = parseInt(prompt("Enter a password length between 8 and 128 characters."));
+var passwordLength = parseInt(prompt("Enter a password length between 8 and 128 characters:"));
+
 // Validating the password length  
   if (passwordLength < 8 || passwordLength > 128 || isNaN(length)) {
     alert("Please enter a valid password length between 8 and 128 characters.");
@@ -121,23 +122,58 @@ if (!specialChar && !numericChar && !lowercaseChar && !uppercaseChar) {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-// Need a variable to hold the password as it's being generated
-  // Need a variable to hold the index that's being generated
-
-  // For loop that loops the number of times that matches the length the user chose
-  // Generate a random number
-  // That number is the index for a character in the mega-array
-  // So then, mega-array[generated-index] is the actual character
-  // Add that character to the password
-
-  // Once we finish the for loop, return the generated password
+  var randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
   }
 
 // Function to generate password with user input
 function generatePassword() {
-// You can store the generatedPassword as a string and concat each character OR
-// as an array and push each character, then join once you have enough characters
+  var options = getPasswordOptions();
 
+  if (!options) return "";
+
+  var availableCharacters = [];
+  var guaranteedCharacters = [];
+
+//Picking which characters types to get
+  if (options.specialChar) {
+    availableCharacters = availableCharacters.concat (specialCharacters);
+    guaranteedCharacters.push(getRandom(specialCharacters));
+  }
+
+  if (options.numericChar) {
+    availableCharacters = availableCharacters.concat (numericCharacters);
+    guaranteedCharacters.push(getRandom(numericCharacters));
+  }
+
+  if (options.lowercaseChar) {
+    availableCharacters = availableCharacters.concat (lowerCasedCharacters);
+    guaranteedCharacters.push(getRandom(lowerCasedCharacters));
+  }
+
+  if (options.uppercaseChar) {
+    availableCharacters = availableCharacters.concat (upperCasedCharacters);
+    guaranteedCharacters.push(getRandom(upperCasedCharacters));
+  }
+
+  //To generate characters randomly
+  var remainingLength = options.length - guaranteedCharacters.length;
+
+  for (var i = 0; i < remainingLength; i++) {
+    var randomChar = getRandom(availableCharacters);
+    guaranteedCharacters.push(randomChar);
+  }
+
+  //To mix the character types
+  for (var j = guaranteedCharacters.length - 1; j > 0; j--) {
+    var k = Math.floor(Math.random() * (j + 1));
+    var temp = guaranteedCharacters[j];
+    guaranteedCharacters[j] = guaranteedCharacters[k];
+    guaranteedCharacters[k] = temp;
+  }
+
+  //Generating the password in the box
+  return guaranteedCharacters.join('');
 }
 
 // Get references to the #generate element
