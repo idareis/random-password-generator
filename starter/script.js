@@ -90,32 +90,33 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  var passwordLength = parseInt(prompt("Enter a password length between 8 and 128 characters"));
-  
-  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-    alert("Please enter a valid password length between 8 and 128.");
+
+// Prompt for password length
+var passwordLength = parseInt(prompt("Enter a password length between 8 and 128 characters."));
+// Validating the password length  
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(length)) {
+    alert("Please enter a valid password length between 8 and 128 characters.");
     return getPasswordOptions();
   }
 
-  var specialCharacters = confirm("Include special characters?");
-  var numerics = confirm("Include numbers?");
-  var lowercaseChar = confirm("Include lowercase characters?");
-  var uppercaseChar = confirm("Include uppercase characters?")
-// Prompt for password length
-  // At least 8 characters, no more than 128 characters
-  // Conditional to check that the number that was entered is in range
-  // Prompts store data as strings, so need to parse into a number
-  // If the user's input is out of range, either return out of the function or call the function again
+  var specialChar = confirm("Would you like to include special characters?");
+  var numericChar = confirm("Would you like to include numbers?");
+  var lowercaseChar = confirm("Would you like to include lowercase characters?");
+  var uppercaseChar = confirm("Would you like to include uppercase characters?");
 
-  // Confirm which character sets to use
-  // If the user answers false for all, either return out of the function or call the function again
-  
-  // Once they select a character set:
-  // Generate a random character for each selected character set
-  // Either push selected character sets to a mega-array of all selected characters
-  // OR you can keep the arrays separate and generate a random number to select the array and another to select the index
-  
-  // Once character sets are selected, move on to generating random characters
+if (!specialChar && !numericChar && !lowercaseChar && !uppercaseChar) {
+  alert("Please select at least one character type.");
+  return null;
+  }
+
+  return {
+    length: length,
+    specialChar: specialChar,
+    numericChar: numericChar,
+    lowercaseChar: lowercaseChar,
+    uppercaseChar: uppercaseChar
+  };
+
 }
 
 // Function for getting a random element from an array
@@ -130,14 +131,13 @@ function getRandom(arr) {
   // Add that character to the password
 
   // Once we finish the for loop, return the generated password
-}
+  }
 
 // Function to generate password with user input
 function generatePassword() {
-  const charOptions = [];
-  const generatedPassword = '';
-  // You can store the generatedPassword as a string and concat each character OR
-  // as an array and push each character, then join once you have enough characters
+// You can store the generatedPassword as a string and concat each character OR
+// as an array and push each character, then join once you have enough characters
+
 }
 
 // Get references to the #generate element
