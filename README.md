@@ -1,4 +1,4 @@
-# random-password-generator
+# Random-password-generator
 
 ## Description
 
