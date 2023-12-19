@@ -19,7 +19,7 @@ A generator where you can pick between uppercase letters, lowercase letters, num
 
 ## Credits
 
-<a href="https://www.youtube.com/watch?v=PkZNo7MFNFg&t=386s">FreeCodeCamp's Javascript Tutorial</a>
+<a href="https://www.youtube.com/watch?v=PkZNo7MFNFg&t=386s">FreeCodeCamp's Javascript Tutorial</a> for helping to understand concepts.
 
 ## License
 
