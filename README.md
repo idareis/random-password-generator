@@ -2,7 +2,7 @@
 
 ## Description
 
-A generator where you can pick between uppercase letters, lowercase letters, numerics and special characters to randomly give you a password that can be used for any sign ups or logins and take out the hassle of brainstorming one on the spot.
+A generator where you can pick between uppercase letters, lowercase letters, numeric and special characters to randomly give you a password that can be used for any sign-ups or logins and take out the hassle of brainstorming one on the spot.
 
 
 
