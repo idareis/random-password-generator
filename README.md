@@ -8,6 +8,8 @@ A generator where you can pick between uppercase letters, lowercase letters, num
 
 ## Usage
 
+Deployed application: https://idareis.github.io/random-password-generator/
+
 - By clicking on the "Generate Password" button, you will be prompted to pick between 8 and 128 characters.
 
     ![website screenshot](assets/images/screenshot1.png)
